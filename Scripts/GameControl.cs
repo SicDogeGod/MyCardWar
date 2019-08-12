@@ -44,6 +44,7 @@ public class GameControl : MonoBehaviour
             return;
         }
         Debug.Log("加载完毕");
+        
     }
 
     public void ChangeScriptCheck(string keystr,bool values)

@@ -13,24 +13,24 @@ public class MonsterLifeBar : MonoBehaviour
     float testfloatl = 1f;
 
 
-    float MaxWidth;
+    float MaxWidth = 400f;
     // Start is called before the first frame update
     void Start()
     {
-        MaxWidth = 400f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetLifeBar(testfloatl);
+        //SetLifeBar(testfloatl);
     }
 
     public void SetLifeBarValue(float lifepercent)
     {
         testfloatl = lifepercent;
     }
-
+    /*
     public void SetLifeBar(float lifepercent)
     {
         RecentLife.GetComponent<RectTransform>().sizeDelta =new Vector2(lifepercent * MaxWidth,10) ;
@@ -39,4 +39,5 @@ public class MonsterLifeBar : MonoBehaviour
     {
         MonsterName.text = strname;
     }
+    */
 }

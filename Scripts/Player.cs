@@ -25,8 +25,12 @@ public class Player : MonoBehaviour
      *********************************************************************/
     public PlayData playDatas;
     public GameControl gameControl;
+    public PlayerInfoListCon playerInfoListCon;
 
     public int characterIndex = 1;
+
+    float RecentTime = 0f;
+    bool CanAttack = false;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -54,6 +58,18 @@ public class Player : MonoBehaviour
         
     }
 
+    public void ChangeBattleStatu()
+    {
+        if (CanAttack)
+        {
+            CanAttack = false;
+        }
+        else
+        {
+            CanAttack = true;
+        }
+    }
+
     public string GetPlayerName()
     {
         return playName;
@@ -62,4 +78,9 @@ public class Player : MonoBehaviour
     {
         return playLevel;
     }
+    public float GetPlayerLife()
+    {
+        return playLife;
+    }
+    
 }
