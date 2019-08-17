@@ -1,34 +1,32 @@
-{
-  "characterData": [
+[
     {
       "index": "1",
       "name": "测试田狗",
-	  "attack":"1",
-	  "defend":"1",
-	  "life":"20",
+	  "attack":"1.0",
+	  "defend":"1.0",
+	  "life":"20.0",
 	  "speed":"3.2",
-	  "critical":"0",
-	  "parry":"0",
+	  "critical":"0.0",
+	  "parry":"0.0",
 	  "level":"1",
-	  "inflexible":"3",
-	  "keen":"3",
-	  "power":"3",
-	  "skillscript":""
+	  "inflexible":"3.0",
+	  "keen":"3.0",
+	  "power":"3.0",
+	  "skillscript":"..."
     },
     {
      "index": "2",
       "name": "测试田狗",
-	  "attack":"2",
-	  "defend":"3",
-	  "life":"40",
-	  "speed":"3",
-	  "critical":"0",
-	  "parry":"0",
+	  "attack":"2.0",
+	  "defend":"3.0",
+	  "life":"40.0",
+	  "speed":"3.0",
+	  "critical":"0.0",
+	  "parry":"0.0",
 	  "level":"2",
-	  "inflexible":"3",
-	  "keen":"3",
-	  "power":"3",
-	  "skillscript":""
+	  "inflexible":"3.0",
+	  "keen":"3.0",
+	  "power":"3.0",
+	  "skillscript":"..."
     }
-  ]
-}
+]
