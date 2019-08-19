@@ -10,11 +10,12 @@ using LitJson;
 
 public class GameData : MonoBehaviour
 {
-    public List<Charactor> charactors = new List<Charactor>();
+    public List<Character> characters = new List<Character>();
+    public List<Monster> monsters = new List<Monster>();
     // Start is called before the first frame update
     void Start()
     {
-        ReturnCharacterList();
+        PerLoadList();
     }
 
     // Update is called once per frame
@@ -23,52 +24,95 @@ public class GameData : MonoBehaviour
         
     }
 
+    public void PerLoadList()
+    {
+        Debug.Log("Start load list data.");
+
+        ReturnCharacterList();
+        ReturnMonsterList();
+
+        Debug.Log("Load list data end.");
+    }
+    
     void ReturnCharacterList()
     {
-        string filepath = Application.dataPath + "/Jsons/Character.json.txt";
+        string filepath = Application.dataPath + "/Jsons/CharacterCfg.json.txt";
         string jsonReader = File.ReadAllText(filepath);
 
         JsonData data = JsonMapper.ToObject(jsonReader);
 
         for (int i = 0; i < data.Count; i++)
         {
-            Charactor character = new Charactor
+            Character character = new Character
             {
-                index = (string)data[i]["index"],
+                index = (int)data[i]["index"],
                 name = (string)data[i]["name"],
                 attack = (string)data[i]["attack"],
                 defend = (string)data[i]["defend"],
                 life = (string)data[i]["life"],
                 speed = (string)data[i]["speed"],
-                critical = (string)data[i]["critical"],
-                parry = (string)data[i]["parry"],
-                level = (string)data[i]["level"],
-                inflexible = (string)data[i]["inflexible"],
-                keen = (string)data[i]["keen"],
-                power = (string)data[i]["power"],
+                critical = (int)data[i]["critical"],
+                parry = (int)data[i]["parry"],
+                inflexible = (int)data[i]["inflexible"],
+                keen = (int)data[i]["keen"],
+                power = (int)data[i]["power"],
                 skillscript = (string)data[i]["skillscript"]
             };
-            charactors.Add(character);
+            characters.Add(character);
         }
-        Debug.Log(charactors[0].index);
-        Debug.Log(charactors[1].index);
+    }
+    void ReturnMonsterList()
+    {
+        string filepath = Application.dataPath + "/Jsons/MonsterCfg.json.txt";
+        string jsonReader = File.ReadAllText(filepath);
+
+        JsonData data = JsonMapper.ToObject(jsonReader);
+
+        for (int i = 0; i < data.Count; i++)
+        {
+            Monster monster = new Monster
+            {
+                index = (int)data[i]["index"],
+                name = (string)data[i]["name"],
+                attack = (string)data[i]["attack"],
+                defend = (string)data[i]["defend"],
+                life = (string)data[i]["life"],
+                speed = (string)data[i]["speed"],
+                dropgroup = (int)data[i]["dropgroup"],
+                skillscript = (string)data[i]["skillscript"]
+            };
+            monsters.Add(monster);
+        }
+
     }
 }
 
 [SerializeField]
-public class Charactor
+public class Character
 {
-    public string index;
+    public int index;
     public string name;
     public string attack;
     public string defend;
     public string life;
     public string speed;
-    public string critical;
-    public string parry;
-    public string level;
-    public string inflexible;
-    public string keen;
-    public string power;
+    public int critical;
+    public int parry;
+    public int inflexible;
+    public int keen;
+    public int power;
+    public string skillscript;
+}
+
+[SerializeField]
+public class Monster
+{
+    public int index;
+    public string name;
+    public string attack;
+    public string defend;
+    public string speed;
+    public string life;
+    public int dropgroup;
     public string skillscript;
 }
