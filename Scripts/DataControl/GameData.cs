@@ -85,6 +85,11 @@ public class GameData : MonoBehaviour
         }
 
     }
+
+    public Character GetCharacterById(int index)
+    {
+        return characters[index - 1];
+    }
 }
 
 [SerializeField]
