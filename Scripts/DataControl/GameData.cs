@@ -10,21 +10,12 @@ using LitJson;
 
 public class GameData : MonoBehaviour
 {
+    public GameControl gameControl;
+
     public List<Character> characters = new List<Character>();
     public List<Monster> monsters = new List<Monster>();
-    // Start is called before the first frame update
-    void Start()
-    {
-        PerLoadList();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void PerLoadList()
+    public void PerLoad()
     {
         Debug.Log("Start load list data.");
 
@@ -32,6 +23,8 @@ public class GameData : MonoBehaviour
         ReturnMonsterList();
 
         Debug.Log("Load list data end.");
+        gameControl.PerLoadAssets("gameData");
+        
     }
     
     void ReturnCharacterList()
@@ -74,6 +67,7 @@ public class GameData : MonoBehaviour
             {
                 index = (int)data[i]["index"],
                 name = (string)data[i]["name"],
+                level = (int)data[i]["level"],
                 attack = (string)data[i]["attack"],
                 defend = (string)data[i]["defend"],
                 life = (string)data[i]["life"],
@@ -113,6 +107,7 @@ public class Character
 public class Monster
 {
     public int index;
+    public int level;
     public string name;
     public string attack;
     public string defend;

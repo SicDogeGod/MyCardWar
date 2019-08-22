@@ -7,40 +7,48 @@ public class BattleControl : MonoBehaviour
 {
     bool canStartBattle = false;
 
+    public GameData gameData;
+    public GameControl gameControl;
+
     public Character character;
-    string character_name;
-    float character_maxLife;
-    float character_recentLife;
-
+    float player_recentlife;
     public Monster monster;
-    float monster_recentLife;
+    float monster_recentlife;
 
-    // Start is called before the first frame update
-    void Start()
+    public void PerLoad()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        OnBattleStart();
     }
 
     void OnBattleStart()
     {
-        character_name = character.name;
-        character_maxLife = float.Parse(character.life);
-        character_recentLife = character_maxLife;
+        Debug.Log("Start load battle.");
 
+        character = gameData.characters[1];
+        Player player = new Player(PlayerPrefs.GetString("play_name"),PlayerPrefs.GetInt("play_level"));
+        player.SetAttriblity(character);
+        player_recentlife = player.MaxLife;
 
+        monster = gameData.monsters[1];
+        Enemy enemy = new Enemy(monster);
+        monster_recentlife = enemy.MaxLife;
+
+        Debug.LogWarning("player_name->"+player.Name);
+        Debug.LogWarning("player_level->" + player.Level);
+        Debug.LogWarning("Monster_name->" + enemy.Name);
+        Debug.LogWarning("Monster_name->" + enemy.Level);
+
+        Debug.Log("End load battle.");
+        gameControl.PerLoadAssets("battleControl");
+
+        
     }
 
     void OnBattleIn()
     {
         do {
 
-        } while (character_recentLife < 0 || monster_recentLife < 0);
+        } while (player_recentlife<0 || monster_recentlife<0);
     }
 
     void OnBattleFinish()
@@ -63,4 +71,5 @@ public class BattleControl : MonoBehaviour
         }
     }
 }
+
 

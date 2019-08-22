@@ -1572,6 +1572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad8c73f2371b7045af734c04ec2718e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameControl: {fileID: 1324084358}
 --- !u!1 &821893490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2081,7 @@ GameObject:
   - component: {fileID: 1088351450}
   - component: {fileID: 1088351449}
   - component: {fileID: 1088351448}
+  - component: {fileID: 1088351452}
   m_Layer: 5
   m_Name: BattleScene
   m_TagString: Untagged
@@ -2168,6 +2170,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1088351452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088351447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a9ae39f8606f540a276dab62dae0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 1734441096}
+  gameControl: {fileID: 1324084358}
 --- !u!1 &1149258111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,6 +2722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1324084357}
+  - component: {fileID: 1324084358}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -2727,6 +2744,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1324084358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324084356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4736044ffc50c743bed18b586b19028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 1734441096}
+  playData: {fileID: 778640540}
+  battleControl: {fileID: 1088351452}
 --- !u!1 &1368719388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3466,6 +3498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035f05c480b78fd49a5d60b9caf9f9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameControl: {fileID: 1324084358}
 --- !u!4 &1734441097
 Transform:
   m_ObjectHideFlags: 0
