@@ -1,0 +1,47 @@
+{
+    "1": {
+        "PID": 1,
+        "attack": "1",
+        "critical": 1,
+        "defend": "1",
+        "index": 1,
+        "inflexible": 3,
+        "keen": 3,
+        "life": "20",
+        "name": "测试田狗",
+        "parry": 0,
+        "power": 3,
+        "skillscript": "",
+        "speed": "3.2"
+    },
+    "2": {
+        "PID": 2,
+        "attack": "2",
+        "critical": 0,
+        "defend": "2",
+        "index": 2,
+        "inflexible": 5,
+        "keen": 5,
+        "life": "40",
+        "name": "测试田狗2",
+        "parry": 1,
+        "power": 5,
+        "skillscript": "",
+        "speed": "3"
+    },
+    "3": {
+        "PID": 3,
+        "attack": "999",
+        "critical": 99,
+        "defend": "999",
+        "index": 3,
+        "inflexible": 99,
+        "keen": 99,
+        "life": "999999",
+        "name": "犬神",
+        "parry": 99,
+        "power": 99,
+        "skillscript": "",
+        "speed": "0.8"
+    }
+}
