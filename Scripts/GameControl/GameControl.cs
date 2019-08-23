@@ -48,7 +48,7 @@ public class GameControl : MonoBehaviour
             battleControl.PerLoad();
             return 1;
         }
-
+        battleControl.SetCanBattle();
         return 0;
     }
 

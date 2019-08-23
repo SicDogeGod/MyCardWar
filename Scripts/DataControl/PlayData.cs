@@ -115,6 +115,17 @@ public class Player
     {
         return pparry / 100;
     }
+    /****************************************************************/
+    public float PlayerGetDamage(float getdamage)
+    {
+        float reciverDamage;
+        reciverDamage = getdamage - Defend_rate;
+        if (reciverDamage < 1f)
+        {
+            reciverDamage = 1f;
+        }
+        return reciverDamage;
+    }
 }
 
 public class Enemy
@@ -144,5 +155,22 @@ public class Enemy
     float GetDefendRate(float edefend,float elevel)
     {
         return (Mathf.Log(Defend,1.15f)+Level);
+    }
+    /****************************************************************/
+    public float EnemyGetDamage(float getdamage,float pcritical)
+    {
+        float reciverDamage;
+        float randcritical = Random.Range(0f, 1f);
+        if (randcritical < pcritical)
+        {
+            getdamage = getdamage * 2;
+        }
+        reciverDamage = getdamage - Defend_rate;
+        if (reciverDamage < 1f)
+        {
+            reciverDamage = 1f;
+        }
+
+        return reciverDamage;
     }
 }
